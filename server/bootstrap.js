@@ -54,6 +54,60 @@ Meteor.startup(function () {
                definition: "one"
            }
        ]
+      },
+
+      {name: "#91-100",
+        items: [
+        {
+            root: "mor, mort",
+            definition: "dead"
+        },
+
+        {
+            root: "morph",
+            definition: "shape"
+        },
+
+        {
+            root: "mut",
+            definition: "change"
+        },
+
+        {
+            root: "nat",
+            definition: "born"
+        },
+
+        {
+            root: "nau, nav",
+            definition: "ship"
+        },
+
+        {
+            root: "neg",
+            definition: "not, deny"
+        },
+
+        {
+            root: "neo",
+            definition: "new"
+        },
+
+        {
+            root: "nom, nym",
+            definition: "name"
+        },
+
+        {
+            root: "nov",
+            definition: "new"
+        },
+
+        {
+            root: "numer",
+            definition: "number"
+        }
+        ]
       }
     ];
 
