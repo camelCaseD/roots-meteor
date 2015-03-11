@@ -1,0 +1,13 @@
+<template name="todosItem">
+  <div class="list-item">
+      <form>
+          <label class="checkbox">
+              <input type="checkbox" checked="{{checked}}" name="checked" disabled>
+              <span class="checkbox-custom"></span>
+          </label>
+          <h5 style="display:inline-block;color:black;padding-top: 15px;">{{root}}</h5>
+
+          <input style="margin-left: 15px;cursor: text;" type="text" placeholder="Definition">
+      </form>
+  </div>
+</template>

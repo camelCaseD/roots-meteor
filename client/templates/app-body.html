@@ -1,0 +1,45 @@
+<template name="appBody">
+  <div id="container" class="{{menuOpen}} {{cordova}}">
+
+    <section id="menu">
+      <div class="btns-group">
+          <a href="#" style="cursor:default;" class="btn-secondary">Roots</a>
+      </div>
+
+      <div class="list-todos">
+        {{#each lists}}
+          <a href="{{pathFor 'listsShow'}}" class="list-todo {{activeListClass}}" title="{{name}}">
+            {{#if userId}}
+              <span class="icon-lock"></span>
+            {{/if}}
+            {{#if incompleteCount}}
+              <span class="count-list">{{incompleteCount}}</span>
+            {{/if}}
+            {{name}}
+          </a>
+        {{/each}}
+
+      </div>
+    </section>
+
+    {{#unless connected}}
+      <div class="notifications">
+        <div class="notification">
+          <span class="icon-sync"></span>
+          <div class="meta">
+            <div class="title-notification">Trying to connect</div>
+            <div class="description">There seems to be a connection issue</div>
+          </div>
+        </div>
+      </div>
+    {{/unless}}
+
+    <div class="content-overlay"></div>
+
+    <div id="content-container">
+      {{#each thisArray}}
+        {{> yield}}
+      {{/each}}
+    </div>
+  </div>
+</template>

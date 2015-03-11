@@ -1,0 +1,42 @@
+<template name="listsShow">
+  <div class="page lists-show">
+    <nav class="js-title-nav">
+      {{#if editing}}
+        <form class="js-edit-form list-edit-form">
+          <input type="text" name="name" value="{{name}}">
+          <div class="nav-group right">
+            <a href="#" class="js-cancel nav-item"><span class="icon-close js-cancel" title="Cancel"></span></a>
+          </div>
+        </form>
+      {{else}}
+        <div class="nav-group">
+          <a href="#" class="js-menu nav-item"><span class="icon-list-unordered" title="Show menu"></span></a>
+        </div>
+
+        <h1 class="js-edit-list title-page"><span class="title-wrapper">{{name}}</span></h1>
+      {{/if}}
+    </nav>
+
+
+    <div class="content-scrollable list-items">
+      {{#if todosReady}}
+        {{#with _id}} {{! Establish new data context with only the '_id'
+                          field. This way, when the 'incompleteCount' field
+                          changes, we don't re-render the list contents }}
+          {{#each todos this}}
+            {{> todosItem}}
+          {{else}}
+            <div class="wrapper-message">
+              <div class="title-message">No tasks here</div>
+              <div class="subtitle-message">Add new tasks using the field above</div>
+            </div>
+          {{/each}}
+        {{/with}}
+      {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">Loading tasks...</div>
+          </div>
+      {{/if}}
+    </div>
+  </div>
+</template>
